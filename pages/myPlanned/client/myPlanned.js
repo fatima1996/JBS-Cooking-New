@@ -126,5 +126,8 @@ Template.myPlanned.events({
       		}
     	);
     	Router.go('/instructions');
+    },
+    "click .js-press":function(){
+    	Meteor.call("removeWeekly");
     }
 })

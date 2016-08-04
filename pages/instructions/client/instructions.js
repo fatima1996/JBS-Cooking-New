@@ -88,7 +88,6 @@ Template.instructions.events({
     const time = $(".js-time").val();
     
     const planobj = {day:day, time:time, id:id, image:image, title:title, cal:calories, fat:fat, carbs:carbs}
-    //Meteor.call("removeWeekly");
     var w = Weekly.findOne({day:day,time:time});
     if(w){
       Meteor.call("updateWeekly", day, time, id, image, title, calories, fat, carbs)
