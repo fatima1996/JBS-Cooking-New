@@ -1,0 +1,45 @@
+<template name="bread">
+  <div class ="col-md-9">
+  <center><top>Featured Breads</top>
+     <button class="js-talk btn btn-lg btn-info">Talk</button><br>
+  </center>
+  <ul><hr>
+    <button class="js-newsearch btn btn-lg btn-info pull-right">New Search</button>
+    <center>Showing <b>{{breads.length}}</b> recipes that match your search criteria!</center>
+    <br>
+  {{#each b in breads}}
+    <li>
+      {{#with b}}
+        {{#if correctUrl}}
+          <img src="{{b.image}}" width = "100" height = "100">
+        {{else}}
+          <img src="https://spoonacular.com/recipeImages/{{b.image}}" width="100" height = "100">
+        {{/if}}
+        <a href="{{b.href}}" class="js-reclink"><name>{{b.title}}</name></a>
+      
+
+        <!--<a href="#">--> 
+        {{> breadsRow  breads=b}}
+      {{/with}}
+    <!--</a>-->
+    </li>
+    <br>
+  {{/each}}
+  <center>Showing <b>{{breads.length}}</b> recipes that match your search criteria!</center>
+    <center>
+      <more>
+      <a href class="js-showMoreA">
+        Show 10 more &nbsp;<span class="glyphicon glyphicon-plus-sign"></span>
+      </a>
+    </more>
+    </center>
+    <button class="js-newsearch btn btn-lg btn-info pull-right">New Search</button>
+  </ul>
+</div>
+</template>
+
+<template name="breadsRow">
+	<!--	 <button  class="glyphicon glyphicon-thumbs-up"></button>-->
+	<span class="js-addFavorite glyphicon glyphicon-star-empty custom"></span>
+		<!-- <button class ="js-addFavorite glyphicon glyphicon-star-empty custom"></button>-->
+</template>

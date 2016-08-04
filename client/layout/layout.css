@@ -1,0 +1,25 @@
+div#header{
+	background-image: url(https://www.rubios.com/sites/default/files/banners/Ingredients_Feature.jpg);
+	height:190px;
+}
+
+#leftNav{
+	margin-left: -1.5%;
+	background-color: #AAD9B2;
+	border-bottom: 20;
+	border-radius: 25px;
+}
+
+#loginButton{
+	margin-left: 5%;
+}
+
+t{
+	font-family: cursive;
+	font-size: 130px;
+	color:#ff9900;
+}
+
+body {
+   background-image:url(http://www.lenaofis.com/website/images/background_gradient.jpg);
+}

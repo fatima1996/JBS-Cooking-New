@@ -1,0 +1,67 @@
+<template name="instructions">
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<center>
+				<top>
+					{{#each recipeInfo}}
+						{{title}}
+					{{/each}}
+				</top>
+				<button class="js-talk btn btn-lg btn-info">Talk</button><br>
+				{{#each recipeInfo}}
+					<img src="{{image}}" width="200" height="150">
+				{{/each}}
+
+			</center>
+			{{#each recipeInfo}}
+				<center>
+					<br>
+					<strong>
+						{{#if cookingMinutes}}
+						Cooking Time: {{cookingMinutes}} min <br>
+						{{/if}}
+
+						{{#if preparationMinutes}}
+						Prep Time: {{preparationMinutes}} min <br>
+						{{/if}}
+
+						{{#if readyInMinutes}}
+						Total Time: {{readyInMinutes}} min <br>
+						{{/if}}
+
+						{{#if servings}}
+						Serving Size: {{servings}} <br>
+						{{/if}}
+
+						{{#if aggregateLikes}}
+						<e>Likes: {{aggregateLikes}} </e>
+						<span class="js-like glyphicon glyphicon-thumbs-up"></span> <br>
+						{{/if}}
+
+					</strong>
+				</center>
+
+
+			{{/each}}
+			<h3>Ingredients</h3>
+			<ul>
+				<p><span id="ingredients"></span></p>
+				{{#each ingredient}}
+				{{/each}}
+			</ul>
+			<h3>Equipment</h3>
+			<ol>
+				<p><span id="eq"></span></p>
+				{{#each equipment}}
+				{{/each}}
+			</ol>
+			<h2>Instructions</h2>
+			<ol>
+				{{#each instruction}}
+					<br><li>{{step}}</li>
+				{{/each}}
+			</ol>
+		</div>
+	</div>
+</template>

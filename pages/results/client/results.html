@@ -1,0 +1,79 @@
+<template name = "results">
+	<div class = "col-md-9">
+		<center><top>Results</top>
+			<button class="js-talk btn btn-lg btn-info">Talk</button><br>
+		</center>
+	<!--	<center>Number of results to show:
+		<select class="js-show">
+		<option>{{number}}</option>
+		<option>10</option>
+		<option>20</option>
+		<option>30</option>
+		<option>40</option>
+		<option>50</option>
+		<option>60</option>
+		<option>70</option>
+		<option>80</option>
+		<option>90</option>
+		<option>100</option>
+	</select>
+</center>-->
+	<ul><hr>
+			<button class="js-newsearch btn btn-lg btn-info pull-right">New Search</button>
+		{{#if recipes}}
+
+		<center>Showing <b>{{recipes.length}}</b> recipes that match your search criteria!</center>
+	<!--<div>
+		<div class="col-md-4" id="left"><a href class="js-prev">&lt;&lt;Show previous 10</a></div>
+		<div id="right"><a href class="js-next">Show next 10 &gt;&gt;</a></div>
+	</div>-->
+	<br>
+    	{{#each r in recipes}}
+	    	<li>
+					{{#with r}}
+						{{#if correctUrl}}
+							<img src="{{r.image}}" width = "100" height = "100">
+						{{else}}
+							<img src="https://spoonacular.com/recipeImages/{{r.image}}" width="100" height = "100">
+						{{/if}}
+						<a href="{{r.href}}" class="js-reclink"><name>{{r.title}}</name></a>
+
+
+						<!--<a href="#">--> 
+						{{> interactRow  recipe=r}}
+					{{/with}}
+
+        <!--</a>-->
+	   		</li>
+				<br>
+    	{{/each}}
+			<center>Showing <b>{{recipes.length}}</b> recipes that match your search criteria!</center>
+			<center>
+				<more>
+				<a href class="js-showMore">
+					Show 10 more &nbsp;<span class="glyphicon glyphicon-plus-sign"></span>
+				</a>
+			</more>
+			</center>
+
+		{{else}}
+			<center>No recipes match your search criteria.</center>
+		{{/if}}
+		<!--
+		<div>
+			<div class="col-md-4" id="left"><a href class="js-prev">&lt;&lt;Show previous 10</a></div>
+			<div id="right"><a href class="js-next">Show next 10 &gt;&gt;</a></div>
+		</div>
+	-->
+	<button class="js-newsearch btn btn-lg btn-info pull-right">New Search</button>
+
+ 	</ul>
+ </div>
+</template>
+
+<template name="interactRow">
+<!--	<e>Likes: {{likes}}</e>-->
+	<!--	 <button  class="glyphicon glyphicon-thumbs-up"></button>-->
+	<span class="js-addFavorite glyphicon glyphicon-star-empty custom"></span>
+		<!-- <button class ="js-addFavorite glyphicon glyphicon-star-empty custom"></button>-->
+</template>

@@ -1,0 +1,166 @@
+<template name="home">
+	<div class = "recipes col-md-7">
+
+		  {{#if currentUser}}
+		    <center>Welcome back!</center>
+		  {{else}}
+		     <center>Please log in if you would like to access your profile.</center>
+		  {{/if}}
+		<br>
+
+		<center>
+		<div id="carousel-example-generic" class="carousel slide col-md-12" data-ride="carousel" >
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+		    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		  </ol>
+
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner" role="listbox">
+		    <div class="item active">
+		    	<center>
+						<a href="/instructions" class= "js-clickedChicken">
+  						<img src="https://spoonacular.com/recipeImages/slow-cooker-chicken-tikka-masala-543421.jpg" width = "670" height = "400">
+						</a>
+		      </center>
+		      <div class="carousel-caption">
+		        Slow Cooker Chicken Tikka Masala
+		      </div>
+		    </div>
+			    <div class="item">
+			    	<center>
+							<a href="/instructions" class= "js-clickedShortcake">
+								<img src="https://spoonacular.com/recipeImages/Strawberry-Shortcake-Truffles-554173.jpg" alt="Mini Red Velvet Cheesecakes" width = "670" height = "400">
+							</a>
+						</center>
+			    	<div class="carousel-caption">
+							Strawberry Shortcake Truffles
+			    	</div>
+		   		</div>
+		    <div class="item">
+		    	<center>
+						<a href="/instructions" class= "js-clickedLemon">
+		      		<img src="https://spoonacular.com/recipeImages/Lemonade-Layer-Cake-383668.jpg" width = "670" height = "400">
+						</a>
+					</center>
+		      <div class="carousel-caption">
+		        Lemonade Layer Cake
+		      </div>
+		    </div>
+				<div class="item">
+		    	<center>
+						<a href="/instructions" class= "js-clickedPulled">
+		      		<img src="https://spoonacular.com/recipeImages/pulled-chicken-208409.jpg" width = "670" height = "400">
+						</a>
+					</center>
+		      <div class="carousel-caption">
+		        Pulled Chicken
+		      </div>
+		    </div>
+				<div class="item">
+		    	<center>
+						<a href="/instructions" class= "js-clickedMein">
+		      		<img src="https://spoonacular.com/recipeImages/Easy-Lo-Mein-615658.jpg" width = "670" height = "400">
+						</a>
+					</center>
+		      <div class="carousel-caption">
+		      	Easy Lo Mein
+		      </div>
+		    </div>
+
+		  </div>
+
+		  <!-- Controls -->
+		  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+		</div>
+		</center>
+
+
+ 		<br><br><br> <br><hr>
+
+				<br>
+
+		<center>
+			<br><br><br>
+		<!--<input type = "ingr" class = "js-ingr" placeholder="Enter what ingredients you would like to use">-->
+		<br>
+		<input id = "input" type = "dish" class = "js-dish textbox" placeholder="Enter what dish you would like to make">
+	<!--	Show:
+		<select class="js-showNum">
+		<option>{{number}}</option>
+		<option>10</option>
+		<option>20</option>
+		<option>30</option>
+		<option>40</option>
+		<option>50</option>
+		<option>60</option>
+		<option>70</option>
+		<option>80</option>
+		<option>90</option>
+		<option>100</option>
+
+	</select>-->
+	<br>
+	<a href="/advancedSearch">Advanced Search</a>
+	<br>
+
+	<a href="/results">
+		<button class="js-recipe button2"><span>
+			Get Recipes</span>
+		</button>
+	</a>
+
+		<button class="js-talk btn btn-lg btn-info">
+			TALK
+		</button>
+
+
+
+
+
+	  </center>
+
+
+	</div>
+	<ul class = "nav nav-pills nav-stacked col-sm-2" id = "rightNav">
+			<li role ="presentation">
+				<a href="/appetizer" class = "js-appetizer">Appetizer</a>
+			</li>
+			<li role ="presentation">
+				<a href="/mainCourse" class = "js-main">Main Course</a>
+			</li>
+			<li role ="presentation">
+				<a href="/sideDish" class = "js-side">Side Dish</a>
+			</li>
+			<li role ="presentation">
+				<a href="/salad" class = "js-salad">Salad</a>
+			</li>
+			<li role ="presentation">
+				<a href="/bread" class = "js-bread">Bread</a>
+			</li>
+			<li role ="presentation">
+				<a href="breakfast" class = "js-breakfast">Breakfast</a>
+			</li>
+			<li role ="presentation">
+				<a href="/soup" class = "js-soup">Soup</a>
+			</li>
+			<li role ="presentation">
+				<a href="/dessert" class = "js-dessert">Dessert</a>
+			</li>
+			<li role ="presentation">
+				<a href="/beverage" class = "js-beverage">Beverage</a>
+			</li>
+			<li role ="presentation">
+				<a href="/sauce" class = "js-sauce">Sauce</a>
+			</li>
+		</ul>
+</template>

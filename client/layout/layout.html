@@ -1,0 +1,31 @@
+<template name="layout">
+
+	<div class="container">
+		<body>
+		<div class="row" id="header">
+			<!--<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster"/>-->
+			<t><center>Chef's Assistant</center></t>
+		</div>
+		<br>
+		<ul class="nav nav-pills nav-stacked col-md-3" id = "leftNav">
+  			<li role="presentation">
+  				<a href="{{pathFor 'home'}}">Home &nbsp;<span class="glyphicon glyphicon-home"></span></a>
+  			</li>
+  			<li role="presentation">
+  				<a href="/myProfile">My Profile &nbsp;<span class="glyphicon glyphicon-user"></span></a>
+  			</li>
+				<li role="presentation">
+	 			 	<a href="/guide">Voice Guide &nbsp;<span class="glyphicon glyphicon-question-sign"></span></a>
+	 			</li>
+ 				<li role="presentation">
+ 			 	<a href="/about">About &nbsp;<span class="glyphicon glyphicon-info-sign"></span></a>
+ 				</li>
+ 			<li role = "presentation" class = "login" id = "loginButton">
+				{{> loginButtons}}
+			</li>
+			<br>
+		</ul>
+	{{> yield}}
+</body>
+	</div>
+</template>

@@ -1,0 +1,82 @@
+<template name="advancedSearch">
+  <div class="col-md-9">
+      <center>
+        <top> Advanced Search  </top>
+      <button class="js-talk btn btn-lg btn-info">
+        Talk
+      </button>
+      </center>
+  <!--  <form action="demo_form.asp" method="get">-->
+      <d>Recipe:</d><br>
+      <input type = "recipe" class = "js-recipe" placeholder="Enter what recipe you would like to search for" id="box"><br>
+      <d>Ingredients:</d><br>
+      <input type = "ingr" class = "js-ingr" placeholder="Enter what ingredients you would like to use" id="box">
+      <br>
+      <d>Cuisine Type:</d><br>
+      <input type = "cuisine" class = "js-cuisine" placeholder="Enter what type of cuisine you would like to cook" id="box">
+      <br>
+      <d>Meal Type:</d>
+        <select class="js-type">
+          <option></option>
+          <option>Appetizer</option>
+          <option>Main Course</option>
+          <option>Side Dish</option>
+          <option>Salad</option>
+          <option>Bread</option>
+          <option>Breakfast</option>
+          <option>Soup</option>
+          <option>Dessert</option>
+          <option>Beverage</option>
+          <option>Sauce</option>
+        </select>
+     <br>
+
+      <d>Allergies/Exclude Ingredients:</d><br>
+      <input type = "allergies" class = "js-allergies" placeholder="Enter what ingredients to exclude in search" id="box"><br>
+
+      <input id="healthybox" type="checkbox" name="healthycheckbox" value="healthy"> <d>Show Healthy Filters</d> <br>
+      {{#if checkHealthy}}
+      <div id="healthyOptions">
+        <!--style="display:none"-->
+        <div class="row">
+          <div class="col-md-6">
+            <d>Minimum Calories: </d><input type = "minCal" class = "js-minCal" id="box2"> <br>
+            <d>Minimum Grams of Carbs:</d> <input type = "minCarb" class = "js-minCarb" id="box2"> <br>
+            <d>Minimum Grams of Fat: </d><input type = "minFat" class = "js-minFat" id="box2"> <br>
+            <d>Minimum Grams of Protein: </d><input type = "minProtein" class = "js-minProtein" id="box2"> <br>
+          </div>
+
+        <div class="col-md-6">
+          <d>Maximum Calories: </d><input type = "maxCal" class = "js-maxCal" id="box2"><br>
+          <d>Maximum Grams of Carbs:</d> <input type = "maxCarb" class = "js-maxCarb" id="box2"><br>
+          <d>Maximum Grams of Fat: </d><input type = "maxFat" class = "js-maxFat" id="box2"><br>
+          <d>Maximum Grams of Protein: </d><input type = "maxProtein" class = "js-maxProtein" id="box2"><br>
+        </div>
+      </div>
+
+     </div>
+     {{/if}}
+
+
+      <input id="dietbox" type="checkbox" name="dietcheckbox" value="diet"> <d>Show Diet Filters</d>
+      {{#if checkDiet}}
+      <div id="diets">
+      <input type="checkbox" name="diet" value="pescetarian"> <d>Pescetarian</d>   <br>
+      <input type="checkbox" name="diet" value="lacto vegetarian"> <d>Lacto Vegetarian </d> <br>
+      <input type="checkbox" name="diet" value="ovo vegetarian"><d> Ovo Vegetarian</d> <br>
+      <input type="checkbox" name="diet" value="vegan"> <d>Vegan </d><br>
+      <input type="checkbox" name="diet" value="vegetarian"> <d>Vegetarian </d> <br>
+    </div>
+      {{/if}}
+      <br>
+        <center>
+          <a href="/results">
+            <button class="js-get button"><span>
+              Get Recipes</span>
+            </button>
+          </a>
+        </center>
+
+    <!--</form>-->
+  </div>
+</template>
