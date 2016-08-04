@@ -75,5 +75,30 @@ Template.instructions.events({
   "click .js-talk": function(event,instance){
     Meteor.call('pierreSpeak');
   },
+  "click .js-plan":function(event){
+    Bert.alert( 'Meal has been saved! You are awesome', 'success', 'growl-top-right' ); 
+    var id = this.id;
+    var image = this.image;
+    var title = this.title;
+    var calories = this.nutrition.nutrients[0].amount;
+    var fat = this.nutrition.nutrients[1].amount;
+    var carbs = this.nutrition.nutrients[3].amount;
+  
+    const day = $(".js-day").val();
+    const time = $(".js-time").val();
+    
+    const planobj = {day:day, time:time, id:id, image:image, title:title, cal:calories, fat:fat, carbs:carbs}
+    //Meteor.call("removeWeekly");
+    var w = Weekly.findOne({day:day,time:time});
+    if(w){
+      Meteor.call("updateWeekly", day, time, id, image, title, calories, fat, carbs)
+    } else {
+      Meteor.call("insertWeekly", planobj);
+    }
+    
+   
+    
+  }
+
 
 })

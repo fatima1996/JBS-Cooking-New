@@ -40,6 +40,21 @@
 						{{/if}}
 
 					</strong>
+					Plan Your Week of Meals: <select class="js-day">
+            			<option class="js-mon">Monday</option>
+            			<option class="js-tues">Tuesday</option>
+			            <option class="js-wed">Wednesday</option>
+			            <option class="js-thur">Thursday</option>
+			            <option class="js-fri">Friday</option>
+			            <option class="js-sat">Saturday</option>
+			            <option class="js-sun">Sunday</option>
+			        </select>
+			        <select class="js-time">
+			            <option class="js-breakfast">Breakfast</option>
+			            <option class="js-lunch">Lunch</option>
+			            <option class="js-dinner">Dinner</option>
+			        </select>
+           			<button class="js-plan btn btn-primary">Plan!</button>
 				</center>
 
 
@@ -62,6 +77,114 @@
 					<br><li>{{step}}</li>
 				{{/each}}
 			</ol>
+			<center>
+            {{#each recipeInfo}}
+                <div class="facts">
+                    <header class="head">
+                        <h1>Nutrition Facts</h1>
+                        <p>Serving Size {{servings}}</p>
+                    </header>
+                    <table class="nf">
+                        <thead>
+                            <tr>
+                                <th colspan="3" class="small-info">Amount per Serving</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th colspan="2">
+                                    <b>Calories</b>
+                                    {{nutrition.nutrients.[0].amount}}
+                                </th>
+                            </tr>
+                            <tr class="thick-row">
+                                <td colspan="3" class="small-info">
+                                    <b>% Daily Value*</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                    <b>Total Fat</b>
+                                    {{nutrition.nutrients.[1].amount}}g
+                                </th>
+                                <td>
+                                    <b>{{nutrition.caloricBreakdown.percentFat}}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                               <td class="blank-cell">
+                               </td> 
+                               <th>
+                                   Saturated Fat
+                                   {{nutrition.nutrients.[2].amount}}g
+                               </th>
+                               <td>
+                                   <b>{{nutrition.nutrients.[2].percentOfDailyNeeds}}</b>
+                               </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                    <b>Cholestoral</b>
+                                    {{nutrition.nutrients.[5].amount}}mg
+                                </th>
+                                <td>
+                                    <b>{{nutrition.nutrients.[5].percentOfDailyNeeds}}%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                    <b>Sodium</b>
+                                    {{nutrition.nutrients.[6].amount}}mg
+                                </th>
+                                <td>
+                                    <b>{{nutrition.nutrients.[6].percentOfDailyNeeds}}%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                    <b>Carbohydrates</b>
+                                    {{nutrition.nutrients.[3].amount}}g
+                                </th>
+                                <td>
+                                    <b>{{nutrition.caloricBreakdown.percentCarbs}}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                               <td class="blank-cell">
+                               </td> 
+                               <th>
+                                   Dietary Fiber
+                                   {{nutrition.nutrients.[20].amount}}g
+                               </th>
+                               <td>
+                                   <b>{{nutrition.nutrients.[20].percentOfDailyNeeds}}%</b>
+                               </td>
+                            </tr>
+                            <tr>
+                               <td class="blank-cell">
+                               </td> 
+                               <th>
+                                   Sugars
+                                   {{nutrition.nutrients.[4].amount}} g
+                               </th>
+                               <td>
+                                   <b>{{nutrition.nutrients.[4].percentOfDailyNeeds}}%</b>
+                               </td>
+                            </tr>
+                            <tr>
+                                <th colspan="3">
+                                    <b>Protein</b>
+                                    {{nutrition.nutrients.[8].amount}} g
+                                </th>
+                                <td>
+                                    <b>{{nutrition.caloricBreakdown.percentProtein}}%</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            {{/each}}
+          </center>
 		</div>
 	</div>
 </template>

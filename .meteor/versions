@@ -4,6 +4,7 @@ accounts-oauth@1.1.13
 accounts-password@1.1.12
 allow-deny@1.0.5
 anti:i18n@0.4.3
+autopublish@1.0.7
 autoupdate@1.2.11
 babel-compiler@6.8.4
 babel-runtime@0.1.9_1
@@ -30,6 +31,8 @@ ejson@1.0.12
 email@1.0.15
 es5-shim@4.5.13
 fastclick@1.0.12
+fortawesome:fontawesome@4.4.0_1
+fourseven:scss@3.8.0_1
 geojson-utils@1.0.9
 google@1.1.13
 hot-code-push@1.0.4
@@ -88,6 +91,7 @@ standard-minifier-js@1.0.8
 stylus@2.512.4
 templating@1.1.13
 templating-tools@1.0.4
+themeteorchef:bert@2.1.1
 tracker@1.0.14
 twbs:bootstrap@3.3.6
 ui@1.0.11
